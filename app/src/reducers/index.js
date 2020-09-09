@@ -26,6 +26,12 @@ export const reducer = (state = initialState, action) => {
         error: "",
         isFetching: false,
       };
+    case FETCH_SPELLS_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+        isFetching: false,
+      };
     default:
       return state;
   }

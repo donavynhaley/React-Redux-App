@@ -1,13 +1,13 @@
 import React from "react";
-import { Link } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 const Spell = (props) => {
   return (
-    <>
-      <Link href="#" onClick={(e) => e.preventDefault()}>
+    <div className="spells">
+      <Button color="secondary" onClick={(e) => e.preventDefault()}>
         {props.spell.name}
-      </Link>
-    </>
+      </Button>
+    </div>
   );
 };
 export default Spell;
