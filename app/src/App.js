@@ -22,13 +22,14 @@ function App(props) {
       >
         Open SpellBook
       </Button>
-      <Spells allSpells={props.spells} />
+      <Spells allSpells={props.spells} loadedSpell={props.loadedSpell} />
     </div>
   );
 }
 
 function mapStateToProps(state) {
   return {
+    loadedSpell: state.loadedSpell,
     spells: state.spells,
     error: state.error,
     isFetching: state.isFetching,
