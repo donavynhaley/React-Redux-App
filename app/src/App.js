@@ -1,22 +1,33 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { CircularProgress } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { connect } from "react-redux";
 import Header from "./components/Header.js";
+import Spells from "./components/Spells.js";
+import { getSpells } from "./actions";
 function App(props) {
   return (
     <div className="App">
-      <Header title={props.title} />
-      <CircularProgress />
+      <Header />
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => {
+          props.getSpells();
+        }}
+      >
+        Open SpellBook
+      </Button>
+      <Spells allSpells={props.spells} />
     </div>
   );
 }
 
 function mapStateToProps(state) {
   return {
-    title: state.title,
+    spells: state.spells,
   };
 }
 
-export default connect(mapStateToProps, {})(App);
+export default connect(mapStateToProps, { getSpells })(App);
