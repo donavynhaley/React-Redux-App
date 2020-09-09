@@ -1,0 +1,19 @@
+.App {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.spell-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.spells {
+  font-size: 1rem;
+}
